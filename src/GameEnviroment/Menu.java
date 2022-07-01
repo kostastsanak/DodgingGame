@@ -29,11 +29,11 @@ public class Menu extends MouseAdapter{
 		if(game.gameState == STATE.Menu) {
 			//play button
 			if(mouseOver(mx,my,380, 300, 250, 64)) {
-//				game.gameState = STATE.Game;
-//				handler.clearAllEnemies();
-//				handler.addObject(new Player(Game.WIDTH/2-32, Game.HEIGHT/2-32, ID.Player,handler));
-//				handler.clearEnemies();
-//				handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT), ID.Enemy,handler));
+				game.gameState = STATE.Game;
+				handler.clearAllEnemies();
+				handler.addObject(new Player(Game.WIDTH/2-32, Game.HEIGHT/2-32, ID.Player,handler));
+				handler.clearEnemies();
+				handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT), ID.Enemy,handler));
 				game.gameState = STATE.SELECT;
 				
 				AudioPlayer.getSound("Menu_sound").play();

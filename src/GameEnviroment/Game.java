@@ -30,6 +30,7 @@ public class Game extends Canvas implements Runnable {
 	private Spawn spawn;
 	private Menu menu;
 	private Shop shop;
+
 	
 	public enum STATE {
 		Menu,
@@ -55,11 +56,11 @@ public class Game extends Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler, this));
 		this.addMouseListener(menu);
 		this.addMouseListener(shop);
-		
+
 		AudioPlayer.load();
 		
 		AudioPlayer.getMusic("music").loop();
-		
+
 		new Window(WIDTH , HEIGHT,"Just a game!",this);
 		
 
@@ -137,12 +138,12 @@ public class Game extends Canvas implements Runnable {
 			    spawn.tick();
 			    handler.tick();
 			    
-				if(hud.HEALTH<=0) {
+				if(HUD.HEALTH<=0) {
 					gameState = STATE.End;
 					handler.clearAllEnemies();
 					for (int i=0;i <18;i++)
 						handler.addObject(new MenuEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.MenuEnemy,handler));
-					hud.HEALTH = 200;
+					HUD.HEALTH = 200;
 					}
 			}
 			
